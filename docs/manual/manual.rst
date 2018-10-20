@@ -12,3 +12,4 @@ Mini-NDN Manual
    CONNECT-TO-OUTSIDE
    CLUSTER
    GUI
+   FAQ

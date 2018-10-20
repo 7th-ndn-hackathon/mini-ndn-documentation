@@ -19,9 +19,9 @@ yet written.
 
 
 
-Indices and tables
+Helpful Links
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+* `NDN Website <http://named-data.net/>`
+* `NDN Contributor's Guide <https://github.com/named-data/NFD/blob/master/CONTRIBUTING.md>`
+* `Mininet Documentation <http://mininet.org/>`

@@ -1,3 +1,5 @@
+FAQ
+=========
 *How does Mini-NDN work?
 Mini-NDN's principles of operation most heavily rely on the underlying Mininet code it relies on.
 Mininet uses a combination of limited containerization via network namespaces (which give processes 
@@ -13,4 +15,5 @@ For more information on qdiscs and tc, view the information `here <http://wiki.l
 
 *Why use Mini-NDN rather than a simulator such as ndnSIM?
 Mini-NDN is easier and faster to use because, rather than serving as a mathematical model of a network,
-it is instead running real NDN code on a real kernel blah blah
+it is instead running real NDN code on a real Linux kernel. This also means it's quite useful for testing
+code changes, as it can more accurately test the interaction of software componenents.
