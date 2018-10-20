@@ -11,7 +11,7 @@ install:
   - pip3 install sphinx_rtd_theme
 
 script:
-  - install.sh -d
+  - ./install.sh -d
 deploy:
   provider: pages
   skip_cleanup: true
