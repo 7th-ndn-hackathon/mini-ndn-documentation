@@ -2,6 +2,7 @@ build
 crypto
 ChronoSync
 dist
+docs/_build/
 doc/html
 doc/latex
 .DS_Store
