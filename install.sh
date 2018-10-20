@@ -330,6 +330,11 @@ function commonClientLibraries {
     jNDN
 }
 
+function buildDocumentation {
+    cd docs
+    make html
+}
+
 function usage {
     printf '\nUsage: %s [-a]\n\n' $(basename $0) >&2
 
@@ -343,13 +348,14 @@ function usage {
     printf -- ' -r: install NLSR\n' >&2
     printf -- ' -t: install tools\n' >&2
     printf -- ' -c: install Common Client Libraries\n' >&2
+    printf -- ' -d: build documentation\n' >&2
     exit 2
 }
 
 if [[ $# -eq 0 ]]; then
     usage
 else
-    while getopts 'abemfrtic' OPTION
+    while getopts 'abemfrticd' OPTION
     do
         case $OPTION in
         a)
@@ -371,6 +377,7 @@ else
         r)    routing;;
         t)    tools;;
         c)    commonClientLibraries;;
+        d)    buildDocumentation;;
         ?)    usage;;
         esac
     done
