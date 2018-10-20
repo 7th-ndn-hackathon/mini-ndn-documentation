@@ -22,6 +22,6 @@ yet written.
 Helpful Links
 ==================
 
-* `NDN Website <http://named-data.net/>`
-* `NDN Contributor's Guide <https://github.com/named-data/NFD/blob/master/CONTRIBUTING.md>`
-* `Mininet Documentation <http://mininet.org/>`
+* `NDN Website <http://named-data.net/>`_
+* `NDN Contributor's Guide <https://github.com/named-data/NFD/blob/master/CONTRIBUTING.md>`_
+* `Mininet Documentation <http://mininet.org/>`_
