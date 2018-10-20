@@ -1,0 +1,1 @@
+Search.setIndex({docnames:["index"],envversion:53,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{doc:0,gener:0,html:0,index:0,instal:0,make:0,modul:0,page:0,pip:0,search:0,sphinx:0,sphinx_rtd_them:0,thi:0},titles:["Welcome to Mini-NDN\u2019s documentation!"],titleterms:{document:0,indic:0,mini:0,ndn:0,tabl:0,welcom:0}})
