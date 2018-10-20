@@ -28,8 +28,7 @@ save `.mnndn` files.
 * **Open** - Open a `.mnndn` topology file
 * **Save** - Save the current topology as a `.mnndn` topology file
 * **Generate** - Convert the current topology to a `.conf` file runnable by Mini-NDN
-* **Run** - Run the current topology in Mini-NDN. The GUI will disappear and Mini-NDN will run on
-            the command-line.
+* **Run** - Run the current topology in Mini-NDN. The GUI will disappear and Mini-NDN will run on the command-line.
 * **Quit** - Exit Mini-NDN edit
 
 ## Tools

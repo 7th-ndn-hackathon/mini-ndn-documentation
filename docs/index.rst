@@ -6,19 +6,16 @@
 Welcome to Mini-NDN's documentation!
 ====================================
 
-To generate this documentation:
-
-   ``pip install sphinx``
-
-   ``pip install sphinx_rtd_theme``
-
-   ``cd docs``
-
-   ``make html``
+This is the documentation page for the |version| release of Mini-NDN network emulator. If you're looking to get started,
+check the :ref:`manual_loc`. For more detailed technical documentation, go read something we have not
+yet written.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+   RELEASE-NOTES
+   manual/manual
 
 
 
