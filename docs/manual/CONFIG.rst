@@ -36,6 +36,37 @@ Additionally each node can take the following parameters:
 
    [nodes] a: \_ cpu=0.3 b: app="sample app 1; sampleapp2.sh" cpu=0.3
 
+One can also specify log levels for each node's NFD and NLSR:
+
+::
+
+    [nodes]
+    a: _ nfd-log-level=DEBUG nlsr-log-level=DEBUG
+    b: _ nfd-log-level=INFO
+
+To specify for log level for certain modules of NFD, directly modify
+``/usr/loca/etc/ndn/nfd.conf``, such as:
+
+::
+
+  default_level NONE
+
+  ; You may override default_level by assigning a logging level
+  ; to the desired module name. Module names can be found in two ways:
+  ;
+  ; Run:
+  ;   nfd --modules
+  ;
+  ; Or look for NFD_LOG_INIT(<module name>) statements in source files.
+  ; Note that the "nfd." prefix can be omitted.
+  ;
+  ; Example module-level settings:
+  ;
+  ; FibManager DEBUG
+  Forwarder INFO
+
+This will turn on FORWARDER logging to INFO for all nodes.
+
 The [links] section:
 ~~~~~~~~~~~~~~~~~~~~
 

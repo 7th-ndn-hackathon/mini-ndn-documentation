@@ -1,12 +1,6 @@
 Getting Started
 ===============
 
-Installation
-------------
-
-Please see `INSTALL.md <../INSTALL.md>`__ for instructions on installing
-Mini-NDN and its dependencies.
-
 Running Mini-NDN
 ----------------
 

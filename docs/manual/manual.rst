@@ -6,6 +6,7 @@ Mini-NDN Manual
    :maxdepth: 2
    :caption: Contents:
 
+   INSTALL
    GETTING-STARTED
    CONFIG
    EXPERIMENTS
