@@ -7,7 +7,7 @@ Welcome to Mini-NDN's documentation!
 ====================================
 
 This is the documentation page for the |version| release of Mini-NDN network emulator. If you're looking to get started,
-check the :ref:`manual_loc`.
+check the :ref:`manual_loc`. Demo of 7th ndn hackathon.
 
 .. toctree::
    :maxdepth: 2
