@@ -17,3 +17,29 @@ For more information on qdiscs and tc, view the information `here <http://wiki.l
 Mini-NDN is easier and faster to use because, rather than serving as a mathematical model of a network,
 it is instead running real NDN code on a real Linux kernel. This also means it's quite useful for testing
 code changes, as it can more accurately test the interaction of software componenents.
+
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Criteria                       | Mini-NDN                                                  | ndnSIM                                  |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Based On                       | Mininet                                                   | ns-3                                    |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Language                       | Python                                                    | C++                                     |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Library/Forwarder/Applications | Use system binaries (free to use any compatible versions) | Integrated (fixed release version)      |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Application language           | C++ (ndn-cxx), CCL (ndn-cpp, PyNDN, ndn-js, jNDN)         | C++ (ndn-cxx)                           |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Simulation size                | Medium (can be scaled further with cluster edition)       | Large (can be parallelized using MPI)   |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Simulation time                | Real time                                                 | Quick (depending on size/memory)        |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Porting real applications      | Drop in                                                   | Changes required                        |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Interactivity                  | Can interact directly with NFD, NLSR or Apps              | Can show stats while running            |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Logs                           | May need to manually setup to collect                     | Available with tracer                   |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Post processing scripts        | Not available, users need to write their own              | Available to use to process the logs    |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
+| Other                          | WiFi, LTE, etc interfaces available from ns-3             | Not yet supported (Wifi in development) |
++--------------------------------+-----------------------------------------------------------+-----------------------------------------+
