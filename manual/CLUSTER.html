@@ -1,0 +1,254 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mini-NDN cluster edition &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mini-NDN Edit" href="GUI.html" />
+    <link rel="prev" title="Connect Mini-NDN nodes to an outside network" href="CONNECT-TO-OUTSIDE.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GETTING-STARTED.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EXPERIMENTS.html">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONNECT-TO-OUTSIDE.html">Connect Mini-NDN nodes to an outside network</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mini-NDN cluster edition</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mini-ndn-cluster-options">Mini-NDN cluster options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="GUI.html">Mini-NDN Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Mini-NDN cluster edition</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/CLUSTER.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mini-ndn-cluster-edition">
+<h1>Mini-NDN cluster edition<a class="headerlink" href="#mini-ndn-cluster-edition" title="Permalink to this headline">¶</a></h1>
+<p>Mini-NDN cluster edition uses the experimental Mininet cluster edition.
+<strong>Make sure that you can run the Mininet cluster edition by following
+`these
+instructions &lt;https://github.com/mininet/mininet/wiki/Cluster-Edition-Prototype&gt;`__</strong>.
+Mini-NDN will use the “mininet” username created in Mininet cluster
+edition setup.</p>
+<div class="section" id="mini-ndn-cluster-options">
+<h2>Mini-NDN cluster options<a class="headerlink" href="#mini-ndn-cluster-options" title="Permalink to this headline">¶</a></h2>
+<p>To run Mini-NDN cluster on <code class="docutils literal notranslate"><span class="pre">localhost</span></code> and another server <code class="docutils literal notranslate"><span class="pre">server1</span></code>
+with the guided node placement strategy (default), the following command
+can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">cluster</span><span class="o">=</span><span class="n">localhost</span><span class="p">,</span><span class="n">server1</span> <span class="o">--</span><span class="n">place</span><span class="o">-</span><span class="nb">list</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">place-list</span></code> specifies the number of nodes to be placed on
+the corresponding servers of the cluster. In the example, one node will
+be placed on <code class="docutils literal notranslate"><span class="pre">localhost</span></code> and three nodes on <code class="docutils literal notranslate"><span class="pre">server1</span></code>. Unless
+specified, the default 4 node topology is used. Another placement can be
+<code class="docutils literal notranslate"><span class="pre">roundRobin</span></code> placement algorithm from Mininet. This does not require a
+place-list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">cluster</span><span class="o">=</span><span class="n">localhost</span><span class="p">,</span><span class="n">server1</span> <span class="o">--</span><span class="n">placement</span> <span class="n">roundRobin</span>
+</pre></div>
+</div>
+<p>By default the tunnel type used is SSH, but GRE tunnel can be specified
+by <code class="docutils literal notranslate"><span class="pre">--tunnel-type=gre</span></code></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="GUI.html" class="btn btn-neutral float-right" title="Mini-NDN Edit" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CONNECT-TO-OUTSIDE.html" class="btn btn-neutral" title="Connect Mini-NDN nodes to an outside network" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

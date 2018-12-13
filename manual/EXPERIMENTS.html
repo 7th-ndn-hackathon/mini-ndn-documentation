@@ -1,0 +1,443 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Experiments &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Connect Mini-NDN nodes to an outside network" href="CONNECT-TO-OUTSIDE.html" />
+    <link rel="prev" title="Configuration" href="CONFIG.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GETTING-STARTED.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">Configuration</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Experiments</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-existing-experiments">Running existing experiments</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#common-experiment-parameters">Common experiment parameters</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#creating-custom-experiments">Creating custom experiments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#passing-arguments-to-experiments">Passing arguments to experiments</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CONNECT-TO-OUTSIDE.html">Connect Mini-NDN nodes to an outside network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CLUSTER.html">Mini-NDN cluster edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI.html">Mini-NDN Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Experiments</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/EXPERIMENTS.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="experiments">
+<h1>Experiments<a class="headerlink" href="#experiments" title="Permalink to this headline">¶</a></h1>
+<p>Mini-NDN includes an experimentation framework which allows a user to
+create and automate networking experiments. Users can run existing
+experiments, included with Mini-NDN, or define their own custom
+experiment.</p>
+<div class="section" id="running-existing-experiments">
+<h2>Running existing experiments<a class="headerlink" href="#running-existing-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Mini-NDN includes three example experiments that can be used to test the
+network or as reference for custom experiment implementations.
+<code class="docutils literal notranslate"><span class="pre">ndn-tools</span></code> must be installed to run the example experiments as each
+experiment uses both <code class="docutils literal notranslate"><span class="pre">ndnpingserver</span></code> and <code class="docutils literal notranslate"><span class="pre">ndnping</span></code>. Please see
+<a class="reference external" href="../INSTALL.md">INSTALL.md</a> for instructions on installing
+<code class="docutils literal notranslate"><span class="pre">ndn-tools</span></code>.</p>
+<p>To see a list of the available experiments, run Mini-NDN using the
+<code class="docutils literal notranslate"><span class="pre">--list-experiments</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minindn</span> <span class="o">--</span><span class="nb">list</span><span class="o">-</span><span class="n">experiments</span>
+</pre></div>
+</div>
+<p>To run an experiment, provide the experiment name as an argument to the
+<code class="docutils literal notranslate"><span class="pre">--experiment</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">experiment</span><span class="o">=</span><span class="n">pingall</span>
+</pre></div>
+</div>
+<p>Each experiment will run until completion or exit if there is an error
+setting up the test environment.</p>
+<p>The three included experiments are set up using the same starting
+configuration. Each node runs NFD, NLSR, and an ndnpingserver which
+advertises the node’s site name. After a waiting period to allow the
+network to converge (default is 60 seconds), the convergence status of
+the network is checked. If each node’s FIB does not have an entry for
+every other node’s router name and advertised prefix, the experiment is
+aborted and an error is reported.</p>
+<div class="section" id="common-experiment-parameters">
+<h3>Common experiment parameters<a class="headerlink" href="#common-experiment-parameters" title="Permalink to this headline">¶</a></h3>
+<p>The time allowed for convergence (in seconds) can be configured using
+the <code class="docutils literal notranslate"><span class="pre">--ctime</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">ctime</span><span class="o">=</span><span class="mi">30</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>After the experiment has finished running, the command-line interface
+(CLI) will be launched and the user can then interact with the test
+environment. To disable the CLI and instead exit Mini-NDN as soon as the
+experiment has finished, use the <code class="docutils literal notranslate"><span class="pre">--no-cli</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">cli</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>To ping only a percentage of nodes <code class="docutils literal notranslate"><span class="pre">--pct-traffic</span></code> can be set.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">pct</span><span class="o">-</span><span class="n">traffic</span><span class="o">=</span><span class="mf">0.5</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>The above command will ping only 50% of other nodes from each node. The
+default value is 1 i.e. ping every other node.</p>
+<p>To move the experiment results to a results directory from the working
+directory after the experiment is complete (either –no-cli or quit) the
+following option can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">result</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mydir</span><span class="o">/</span><span class="n">result</span><span class="o">-</span><span class="nb">dir</span> <span class="o">...</span>
+</pre></div>
+</div>
+<p>The included experiments are described in detail below along with
+additional parameters that can be provided to modify the execution of
+the experiments.</p>
+<div class="section" id="pingall-experiment">
+<h4>Pingall experiment<a class="headerlink" href="#pingall-experiment" title="Permalink to this headline">¶</a></h4>
+<p><strong>Scenario</strong>: Each node in the network simultaneously pings every other
+node in the network at a one second interval.</p>
+<p><strong>Experiment ID</strong>: <code class="docutils literal notranslate"><span class="pre">--pingall</span></code></p>
+<p>The number of pings sent in the experiment can be configured using the
+<code class="docutils literal notranslate"><span class="pre">--nPings</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">experiment</span><span class="o">=</span><span class="n">pingall</span> <span class="o">--</span><span class="n">nPings</span><span class="o">=</span><span class="mi">120</span>
+</pre></div>
+</div>
+<p>By default, <code class="docutils literal notranslate"><span class="pre">--nPings</span></code> is 300 for the Pingall experiment.</p>
+</div>
+<div class="section" id="failure-experiment">
+<h4>Failure experiment<a class="headerlink" href="#failure-experiment" title="Permalink to this headline">¶</a></h4>
+<p><strong>Scenario</strong>: Each node in the network simultaneously pings every other
+node in the network at a one second interval. After 60 seconds, the node
+with the name “csu” is brought down. The node is left in a failed state
+for 120 seconds while the other nodes continue pinging. After this
+period, the failed node is recovered and pings are collected for an
+additional 90 seconds.</p>
+<p><strong>Experiment ID</strong>: <code class="docutils literal notranslate"><span class="pre">--failure</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--nPings</span></code> is 300 for the Failure experiment and cannot be modified.</p>
+</div>
+<div class="section" id="multiple-failure-experiment">
+<h4>Multiple failure experiment<a class="headerlink" href="#multiple-failure-experiment" title="Permalink to this headline">¶</a></h4>
+<p><strong>Scenario</strong>: Each node in the network simultaneously pings every other
+node in the network at a one second interval. After 60 seconds, the
+first node in the network will be brought down and remain in failed
+state for 60 seconds. After the failure period, the node is recovered
+and the network is allowed to recover for 60 seconds. After the recovery
+period, the next node will go through this failure and recovery process.
+Once every node in the network has gone through the failure and recovery
+process, the experiment will end.</p>
+<p><strong>Experiment ID</strong>: <code class="docutils literal notranslate"><span class="pre">--multiple-failure</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">--nPings</span></code> is dependent on the size of the topology being tested. 120
+pings are scheduled for each node’s failure/recovery period as well as
+an additional 60 pings for the initial collection period.</p>
+</div>
+<div class="section" id="mcn-failure-experiment">
+<h4>MCN failure experiment<a class="headerlink" href="#mcn-failure-experiment" title="Permalink to this headline">¶</a></h4>
+<p><strong>Scenario</strong>: This is exactly like the failure experiment but instead of
+failing the node named “csu” it fails the most connected node (MCN) i.e
+the node with the most links.</p>
+<p>Experiment ID: <code class="docutils literal notranslate"><span class="pre">--failure-mcn</span></code></p>
+</div>
+<div class="section" id="experiment-data">
+<h4>Experiment data<a class="headerlink" href="#experiment-data" title="Permalink to this headline">¶</a></h4>
+<p>The ping data is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/ping-data</span></code>.</p>
+<p>The ping server log is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/ping-server</span></code></p>
+</div>
+</div>
+</div>
+<div class="section" id="creating-custom-experiments">
+<h2>Creating custom experiments<a class="headerlink" href="#creating-custom-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Mini-NDN provides a simple Python based framework which allows a user to
+define their own experiment and run it from the command line.</p>
+<p>To create an experiment, follow these steps:</p>
+<ol class="arabic simple">
+<li>Create a Python source file for the experiment in the
+<code class="docutils literal notranslate"><span class="pre">ndn/experiments</span></code> directory.</li>
+</ol>
+<p>e.g.) <code class="docutils literal notranslate"><span class="pre">ndn/experiments/example.py</span></code></p>
+<ol class="arabic" start="2">
+<li><p class="first">Derive the experiment from the <code class="docutils literal notranslate"><span class="pre">Experiment</span></code> base class defined in
+<code class="docutils literal notranslate"><span class="pre">ndn/experiments/experiment.py</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+
+<span class="kn">from</span> <span class="nn">ndn.experiments.experiment</span> <span class="k">import</span> <span class="n">Experiment</span>
+
+<span class="k">class</span> <span class="nc">ExampleExperiment</span><span class="p">(</span><span class="n">Experiment</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Override the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> method to define how the experiment should
+be initialized</p>
+</li>
+</ol>
+<p>e.g.) Run an ndnping server in the background on each node</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+   <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+       <span class="n">host</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;ndnpingserver host.name &amp;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic" start="4">
+<li><p class="first">Override the <code class="docutils literal notranslate"><span class="pre">run()</span></code> method to define how the experiment should
+behave</p>
+<p>e.g.) Obtain the NFD status of each node and save it to file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+        <span class="n">host</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;nfdc status report &gt; status.txt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Register the experiment with the <code class="docutils literal notranslate"><span class="pre">ExperimentManager</span></code> to make the
+experiment runnable from the command line.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Experiment</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;example-name&quot;</span><span class="p">,</span> <span class="n">ExampleExperiment</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>The experiment can then be run from the command-line using the name
+registered. “example-name” in the above example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">experiment</span><span class="o">=</span><span class="n">example</span><span class="o">-</span><span class="n">name</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/python</span>
+
+<span class="kn">from</span> <span class="nn">ndn.experiments.experiment</span> <span class="k">import</span> <span class="n">Experiment</span>
+
+<span class="k">class</span> <span class="nc">ExampleExperiment</span><span class="p">(</span><span class="n">Experiment</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">):</span>
+        <span class="n">Experiment</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+            <span class="n">host</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;ndnpingserver host.name &amp;&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">host</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="o">.</span><span class="n">hosts</span><span class="p">:</span>
+            <span class="c1"># By default status.txt would be stored</span>
+            <span class="c1"># at /tmp/minindn/host/status.txt</span>
+            <span class="n">host</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">&quot;nfdc status report &gt; status.txt&quot;</span><span class="p">)</span>
+
+<span class="n">Experiment</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="s2">&quot;example-name&quot;</span><span class="p">,</span> <span class="n">ExampleExperiment</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="passing-arguments-to-experiments">
+<h2>Passing arguments to experiments<a class="headerlink" href="#passing-arguments-to-experiments" title="Permalink to this headline">¶</a></h2>
+<p>Mini-NDN has the capacity to pass arguments to experiments, insofar as
+they do not clash with those of Mini-NDN. This feature allows users to
+pass arguments to Mini-NDN and process them in an experiment without
+having to rewrite Mini-NDN’s core.</p>
+<p>An example of an experiment implementing this functionality is given in
+<code class="docutils literal notranslate"><span class="pre">ndn/experiments/arguments_experiment.py</span></code>, which demonstrates how to
+write code which handles arguments. Documentation for these arguments
+appears when called with <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">minindn</span> <span class="pre">-h</span></code>, as does documentation for
+fixed arguments defined in core code, so it is strongly recommended to
+differentiate those you write yourself. Note that Bash and Zsh users can
+make use of autocomplete functionality when calling these arguments.</p>
+<p>To run the experiment:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">experiment</span> <span class="n">arg</span><span class="o">-</span><span class="n">exp</span> <span class="o">--</span><span class="n">ds</span> <span class="mi">226</span> <span class="o">--</span><span class="n">logging</span>
+</pre></div>
+</div>
+<p>The experiment will print out the supplied value for –ds and a boolean
+value for the presence of –logging. –experiment is a fixed argument of
+Mini-NDN.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CONNECT-TO-OUTSIDE.html" class="btn btn-neutral float-right" title="Connect Mini-NDN nodes to an outside network" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CONFIG.html" class="btn btn-neutral" title="Configuration" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

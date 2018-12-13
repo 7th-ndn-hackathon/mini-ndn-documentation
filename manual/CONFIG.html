@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Configuration &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Experiments" href="EXPERIMENTS.html" />
+    <link rel="prev" title="Getting Started" href="GETTING-STARTED.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GETTING-STARTED.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#configuration-file-format">Configuration file format:</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#the-nodes-section">The [nodes] section:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#the-links-section">The [links] section:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-configuration-file">Example configuration file</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="EXPERIMENTS.html">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONNECT-TO-OUTSIDE.html">Connect Mini-NDN nodes to an outside network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CLUSTER.html">Mini-NDN cluster edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI.html">Mini-NDN Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Configuration</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/CONFIG.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="configuration">
+<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h1>
+<p>Mini-NDN uses a configuration file describing the topology and its
+parameters to setup a network. It can be generated by the GUI or written
+by hand or scripts.</p>
+<div class="section" id="configuration-file-format">
+<h2>Configuration file format:<a class="headerlink" href="#configuration-file-format" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-nodes-section">
+<h3>The [nodes] section:<a class="headerlink" href="#the-nodes-section" title="Permalink to this headline">¶</a></h3>
+<p>At the bare minimum, the node section describes the nodes present in the
+topology.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nodes</span><span class="p">]</span>
+<span class="n">a</span><span class="p">:</span> <span class="n">_</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">_</span>
+</pre></div>
+</div>
+<p>Additionally each node can take the following parameters:</p>
+<ul>
+<li><p class="first">app : Default application(s) to be started on a node (specify ‘_’ if
+no app needs to be started - required). The app is the only parameter
+which needs double quotes (see example below).</p>
+</li>
+<li><p class="first">cpu : Amount of cpu available to a node (0.00 - 1.00), optional</p>
+</li>
+<li><p class="first">mem : Amount of memory available to a node in KB</p>
+</li>
+<li><p class="first">cache : Amount of cache memory available to a node in KB</p>
+<p>e.g.)</p>
+<p>[nodes] a: _ cpu=0.3 b: app=”sample app 1; sampleapp2.sh” cpu=0.3</p>
+</li>
+</ul>
+<p>One can also specify log levels for each node’s NFD and NLSR:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nodes</span><span class="p">]</span>
+<span class="n">a</span><span class="p">:</span> <span class="n">_</span> <span class="n">nfd</span><span class="o">-</span><span class="n">log</span><span class="o">-</span><span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span> <span class="n">nlsr</span><span class="o">-</span><span class="n">log</span><span class="o">-</span><span class="n">level</span><span class="o">=</span><span class="n">DEBUG</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">_</span> <span class="n">nfd</span><span class="o">-</span><span class="n">log</span><span class="o">-</span><span class="n">level</span><span class="o">=</span><span class="n">INFO</span>
+</pre></div>
+</div>
+<p>To specify for log level for certain modules of NFD, directly modify
+<code class="docutils literal notranslate"><span class="pre">/usr/loca/etc/ndn/nfd.conf</span></code>, such as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">default_level</span> <span class="n">NONE</span>
+
+<span class="p">;</span> <span class="n">You</span> <span class="n">may</span> <span class="n">override</span> <span class="n">default_level</span> <span class="n">by</span> <span class="n">assigning</span> <span class="n">a</span> <span class="n">logging</span> <span class="n">level</span>
+<span class="p">;</span> <span class="n">to</span> <span class="n">the</span> <span class="n">desired</span> <span class="n">module</span> <span class="n">name</span><span class="o">.</span> <span class="n">Module</span> <span class="n">names</span> <span class="n">can</span> <span class="n">be</span> <span class="n">found</span> <span class="ow">in</span> <span class="n">two</span> <span class="n">ways</span><span class="p">:</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">Run</span><span class="p">:</span>
+<span class="p">;</span>   <span class="n">nfd</span> <span class="o">--</span><span class="n">modules</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">Or</span> <span class="n">look</span> <span class="k">for</span> <span class="n">NFD_LOG_INIT</span><span class="p">(</span><span class="o">&lt;</span><span class="n">module</span> <span class="n">name</span><span class="o">&gt;</span><span class="p">)</span> <span class="n">statements</span> <span class="ow">in</span> <span class="n">source</span> <span class="n">files</span><span class="o">.</span>
+<span class="p">;</span> <span class="n">Note</span> <span class="n">that</span> <span class="n">the</span> <span class="s2">&quot;nfd.&quot;</span> <span class="n">prefix</span> <span class="n">can</span> <span class="n">be</span> <span class="n">omitted</span><span class="o">.</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">Example</span> <span class="n">module</span><span class="o">-</span><span class="n">level</span> <span class="n">settings</span><span class="p">:</span>
+<span class="p">;</span>
+<span class="p">;</span> <span class="n">FibManager</span> <span class="n">DEBUG</span>
+<span class="n">Forwarder</span> <span class="n">INFO</span>
+</pre></div>
+</div>
+<p>This will turn on FORWARDER logging to INFO for all nodes.</p>
+</div>
+<div class="section" id="the-links-section">
+<h3>The [links] section:<a class="headerlink" href="#the-links-section" title="Permalink to this headline">¶</a></h3>
+<p>The links section describes the links in the topology.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="o">.</span><span class="n">g</span><span class="o">.</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">links</span><span class="p">]</span>
+<span class="n">a</span><span class="p">:</span><span class="n">b</span> <span class="n">delay</span><span class="o">=</span><span class="mi">10</span><span class="n">ms</span>
+</pre></div>
+</div>
+<p>This would create a link between a and b. ‘b:a’ would also result in the
+same. The following parameters can be configured for a node:</p>
+<ul class="simple">
+<li>delay : Delay parameter is a required parameter which defines the
+delay of the link (1-1000ms)</li>
+<li>bw : Bandwidth of a link (&lt;1-1000&gt; Mbps)</li>
+<li>loss : Percentage of packet loss (&lt;1-100&gt;)</li>
+</ul>
+</div>
+<div class="section" id="example-configuration-file">
+<h3>Example configuration file<a class="headerlink" href="#example-configuration-file" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nodes</span><span class="p">]</span>
+<span class="n">a</span><span class="p">:</span> <span class="n">_</span> <span class="n">cpu</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="n">b</span><span class="p">:</span> <span class="n">app</span><span class="o">=</span><span class="s2">&quot;sampleApp1; ./sampleApp2.sh&quot;</span> <span class="n">cpu</span><span class="o">=</span><span class="mf">0.3</span>
+<span class="p">[</span><span class="n">links</span><span class="p">]</span>
+<span class="n">a</span><span class="p">:</span><span class="n">b</span> <span class="n">delay</span><span class="o">=</span><span class="mi">10</span><span class="n">ms</span> <span class="n">bw</span><span class="o">=</span><span class="mi">100</span>
+</pre></div>
+</div>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">sampleApp1</span></code> and <code class="docutils literal notranslate"><span class="pre">sampleApp2</span></code> must be either installed in
+the system (ex: /usr/bin) or an absolute path needs to be given.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">ndn_utils/topologies</span></code> for more sample files</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="EXPERIMENTS.html" class="btn btn-neutral float-right" title="Experiments" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="GETTING-STARTED.html" class="btn btn-neutral" title="Getting Started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

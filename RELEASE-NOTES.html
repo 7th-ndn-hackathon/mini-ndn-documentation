@@ -1,0 +1,350 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Release Notes &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Past NDN hackathon projects" href="hackathons.html" />
+    <link rel="prev" title="FAQ" href="manual/FAQ.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manual/manual.html">Mini-NDN Manual</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mini-ndn-version-0-4-0-changes-since-version-0-3-0">Mini-NDN version 0.4.0 (changes since version 0.3.0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-ndn-version-0-3-0-changes-since-version-0-2-0">Mini-NDN version 0.3.0 (changes since version 0.2.0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-ndn-version-0-2-0-changes-since-version-0-1-1">Mini-NDN version 0.2.0 (changes since version 0.1.1)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-ndn-version-0-1-1-changes-since-version-0-1-0">Mini-NDN version 0.1.1 (changes since version 0.1.0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mini-ndn-version-0-1-0-initial-release">Mini-NDN version 0.1.0 (initial release)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Release Notes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/RELEASE-NOTES.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mini-ndn-version-0-4-0-changes-since-version-0-3-0">
+<h2>Mini-NDN version 0.4.0 (changes since version 0.3.0)<a class="headerlink" href="#mini-ndn-version-0-4-0-changes-since-version-0-3-0" title="Permalink to this headline">¶</a></h2>
+<p>Release date: January 10, 2018</p>
+<p><strong>New features</strong>:</p>
+<ul class="simple">
+<li>Use SIGQUIT to quit Mini-NDN, SIGINT to kill programs</li>
+<li>Use Infoedit to edit NFD and NLSR configuration files</li>
+<li>Use nlsr.conf installed in the system</li>
+<li>Provide a Vagrantfile to setup Mini-NDN and NDN</li>
+<li>Provide option to disable NLSR</li>
+<li>Provide an option to run NLSR in dry-run mode</li>
+<li>Add option to specify whether to use TCP or UDP face in nlsr.conf</li>
+<li>Add option to specify arbitrary arguments to use in experiments</li>
+<li>Include a single option to install Mini-NDN and all the dependencies</li>
+</ul>
+<p><strong>Bug fixes</strong>:</p>
+<ul class="simple">
+<li>Fix “key does not exist error” after NLSR starts</li>
+<li>Update install.sh to call ldconfig after installing ChronoSync</li>
+<li>Add hyperbolic coordinates to default topology</li>
+</ul>
+<p><strong>Misc changes</strong>:</p>
+<ul class="simple">
+<li>Add an experiment to test nlsrc</li>
+<li>Create faces in NFD for each neighbor in NLSR</li>
+<li>Update to latest ndn-cxx</li>
+<li>Use /tmp/minindn folder as default work dir instead of /tmp</li>
+</ul>
+</div>
+<div class="section" id="mini-ndn-version-0-3-0-changes-since-version-0-2-0">
+<h2>Mini-NDN version 0.3.0 (changes since version 0.2.0)<a class="headerlink" href="#mini-ndn-version-0-3-0-changes-since-version-0-2-0" title="Permalink to this headline">¶</a></h2>
+<p>Release date: March 3, 2017</p>
+<p><strong>New features</strong>:</p>
+<ul class="simple">
+<li>Mini-NDN cluster edition</li>
+<li>New experiments for making NLSR testing easier</li>
+</ul>
+<p><strong>Bug fixes</strong>:</p>
+<ul class="simple">
+<li>Set site name correctly</li>
+<li>Install missing certificates in NLSR security config</li>
+<li>Fix quitting of NLSR due to key not found error</li>
+</ul>
+<p><strong>Misc changes</strong>:</p>
+<ul class="simple">
+<li>Removed nlsr.conf file, generate it within the code</li>
+<li>Use argparse instead of deprecated optparse</li>
+<li>Update security config section for NLSR</li>
+<li>Change mininet prompt to mini-ndn</li>
+<li>Set network name at one place</li>
+<li>Update install.sh script to install openssl</li>
+<li>Update install.sh script to install cryptopp from package instead of
+compiling from source</li>
+<li>Update install.sh to clean build folder every time to get rid of
+removed files such as old experiments</li>
+<li>Fix old code - use net.hosts instead of storing hosts in a variable</li>
+<li>Use nfdc instead of deprecated nfd-status</li>
+</ul>
+</div>
+<div class="section" id="mini-ndn-version-0-2-0-changes-since-version-0-1-1">
+<h2>Mini-NDN version 0.2.0 (changes since version 0.1.1)<a class="headerlink" href="#mini-ndn-version-0-2-0-changes-since-version-0-1-1" title="Permalink to this headline">¶</a></h2>
+<p>Release date: August 18, 2016</p>
+<p><strong>New features</strong>:</p>
+<ul class="simple">
+<li>Automatic security configuration for NLSR</li>
+<li>Use /usr/local/etc/ndn/nfd.conf as default config file for NFD</li>
+<li>Class to monitor /proc/$PID/stat file for PID</li>
+<li>Mini-NDN exits gracefully on SIGINT and non-convergence</li>
+<li>Faster Mini-NDN install script - does not do apt-get update everytime</li>
+<li>NLSR is launched with explicit config file for easier process
+identification</li>
+<li>Add and update more documentation</li>
+</ul>
+<p><strong>Bug fixes</strong>:</p>
+<ul class="simple">
+<li>NFD is killed correctly on exit</li>
+<li>Best route strategy is set correctly</li>
+</ul>
+</div>
+<div class="section" id="mini-ndn-version-0-1-1-changes-since-version-0-1-0">
+<h2>Mini-NDN version 0.1.1 (changes since version 0.1.0)<a class="headerlink" href="#mini-ndn-version-0-1-1-changes-since-version-0-1-0" title="Permalink to this headline">¶</a></h2>
+<p>Release date: November 4, 2015</p>
+<p><strong>New features</strong>:</p>
+<ul class="simple">
+<li>Use nfd.conf.sample from currently installed NFD</li>
+<li>Add working directory option to allow execution environment outside
+of /tmp</li>
+<li>Add results directory option to store experiment results after
+completion</li>
+<li>Add support for switches in GUI and configuration file</li>
+<li>Add failNode and recoverNode methods to Experiment class</li>
+<li>Add most connected node (MCN) failure experiment</li>
+<li>Add option to specify percentage of nodes pinged</li>
+</ul>
+<p><strong>Code changes</strong>:</p>
+<ul class="simple">
+<li>Refactor program options into container class</li>
+<li>Remove unused “FIB Entries” option from NDN host options</li>
+</ul>
+<p><strong>Bug fixes</strong>:</p>
+<ul class="simple">
+<li>Abort start up if experiment name is invalid</li>
+<li>Restart pings after recovery in failure experiment</li>
+</ul>
+</div>
+<div class="section" id="mini-ndn-version-0-1-0-initial-release">
+<h2>Mini-NDN version 0.1.0 (initial release)<a class="headerlink" href="#mini-ndn-version-0-1-0-initial-release" title="Permalink to this headline">¶</a></h2>
+<p>Release date: July 15, 2015</p>
+<p>Mini-NDN is a lightweight networking emulation tool that enables
+testing, experimentation, and research on the NDN platform. Based on
+Mininet, Mini-NDN uses the NDN libraries, NFD, NLSR, and tools released
+by the <a class="reference external" href="http://named-data.net/codebase/platform/">NDN project</a> to
+emulate an NDN network on a single system.</p>
+<p><strong>Included features</strong>:</p>
+<ul class="simple">
+<li>Run a complete NDN network on a single system</li>
+<li>Automatic configuration of NLSR to provide a routable NDN network</li>
+<li>Supports user created NDN applications</li>
+<li>Create a topology using the included Mini-NDN Edit GUI application</li>
+<li>Allows individual configuration of NFD and NLSR parameters for each
+node</li>
+<li>Provides an experiment management framework for easy creation of
+custom networking experiments</li>
+<li>Uses a simple topology file format to define hosts, links, and
+configuration values</li>
+<li>Configure network link parameters including bandwidth, delay, and
+loss rate</li>
+<li>Includes a pre-configured topology file to replicate the NDN testbed</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hackathons.html" class="btn btn-neutral float-right" title="Past NDN hackathon projects" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="manual/FAQ.html" class="btn btn-neutral" title="FAQ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

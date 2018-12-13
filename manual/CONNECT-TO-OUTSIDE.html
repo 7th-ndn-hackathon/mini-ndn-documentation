@@ -1,0 +1,327 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Connect Mini-NDN nodes to an outside network &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mini-NDN cluster edition" href="CLUSTER.html" />
+    <link rel="prev" title="Experiments" href="EXPERIMENTS.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GETTING-STARTED.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EXPERIMENTS.html">Experiments</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Connect Mini-NDN nodes to an outside network</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#add-a-node-in-root-namespace">Add a node in root namespace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#check-connection">Check connection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#run-nfd-on-local-machine-and-register-route">Run NFD on local machine and register route</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CLUSTER.html">Mini-NDN cluster edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI.html">Mini-NDN Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Connect Mini-NDN nodes to an outside network</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/CONNECT-TO-OUTSIDE.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="connect-mini-ndn-nodes-to-an-outside-network">
+<h1>Connect Mini-NDN nodes to an outside network<a class="headerlink" href="#connect-mini-ndn-nodes-to-an-outside-network" title="Permalink to this headline">¶</a></h1>
+<p>Mini-NDN nodes can be connected to an outside network indirectly by
+running NFD on the local machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">Mini</span><span class="o">-</span><span class="n">NDN</span> <span class="n">node</span><span class="p">)</span> <span class="o">------</span> <span class="p">(</span><span class="n">NFD</span> <span class="n">running</span> <span class="n">on</span> <span class="n">the</span> <span class="n">host</span> <span class="n">machine</span> <span class="n">where</span> <span class="n">Mini</span><span class="o">-</span><span class="n">NDN</span> <span class="ow">is</span> <span class="n">running</span><span class="p">)</span> <span class="o">-------</span> <span class="p">(</span><span class="n">External</span> <span class="n">Network</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="add-a-node-in-root-namespace">
+<h2>Add a node in root namespace<a class="headerlink" href="#add-a-node-in-root-namespace" title="Permalink to this headline">¶</a></h2>
+<p>For this simple example, we use the default topology:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">----</span><span class="n">a</span><span class="o">----</span><span class="n">b</span><span class="o">----</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>If we want node “a” to connect to the host machine, we need to add a
+“root” node which has a link with node “a.”</p>
+<p>To do so, we need to add the following import statement at the top of
+<code class="docutils literal notranslate"><span class="pre">bin/minindn</span></code>:</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mininet.node</span> <span class="k">import</span> <span class="n">Node</span>
+</pre></div>
+</div>
+<p>Then the following lines can be added to <code class="docutils literal notranslate"><span class="pre">bin/minindn</span></code> before
+net.start():</p>
+<div class="code python highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span> <span class="s1">&#39;root&#39;</span><span class="p">,</span> <span class="n">inNamespace</span><span class="o">=</span><span class="kc">False</span> <span class="p">)</span>
+<span class="n">net</span><span class="o">.</span><span class="n">addLink</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Adding these before net.start() is important as node “root” would then
+be assigned an IP automatically. Re-install Mini-NDN by issuing the
+following command in the mini-ndn folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="o">./</span><span class="n">install</span><span class="o">.</span><span class="n">sh</span> <span class="o">-</span><span class="n">i</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<p>Run Mini-NDN with the simple topology and issue ifconfig on the local
+machine to confirm the addition of the interface. You should be able to
+locate “root-eth0”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">root</span><span class="o">-</span><span class="n">eth0</span> <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">Ethernet</span>  <span class="n">HWaddr</span> <span class="mi">3</span><span class="n">e</span><span class="p">:</span><span class="n">eb</span><span class="p">:</span><span class="mi">77</span><span class="p">:</span><span class="n">d2</span><span class="p">:</span><span class="mi">6</span><span class="n">f</span><span class="p">:</span><span class="mi">1</span><span class="n">f</span>
+          <span class="n">inet</span> <span class="n">addr</span><span class="p">:</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span>  <span class="n">Bcast</span><span class="p">:</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.11</span>  <span class="n">Mask</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.252</span>
+          <span class="n">inet6</span> <span class="n">addr</span><span class="p">:</span> <span class="n">fe80</span><span class="p">::</span><span class="mi">3</span><span class="n">ceb</span><span class="p">:</span><span class="mi">77</span><span class="n">ff</span><span class="p">:</span><span class="n">fed2</span><span class="p">:</span><span class="mi">6</span><span class="n">f1f</span><span class="o">/</span><span class="mi">64</span> <span class="n">Scope</span><span class="p">:</span><span class="n">Link</span>
+          <span class="n">UP</span> <span class="n">BROADCAST</span> <span class="n">RUNNING</span> <span class="n">MULTICAST</span>  <span class="n">MTU</span><span class="p">:</span><span class="mi">1500</span>  <span class="n">Metric</span><span class="p">:</span><span class="mi">1</span>
+          <span class="n">RX</span> <span class="n">packets</span><span class="p">:</span><span class="mi">34</span> <span class="n">errors</span><span class="p">:</span><span class="mi">0</span> <span class="n">dropped</span><span class="p">:</span><span class="mi">0</span> <span class="n">overruns</span><span class="p">:</span><span class="mi">0</span> <span class="n">frame</span><span class="p">:</span><span class="mi">0</span>
+          <span class="n">TX</span> <span class="n">packets</span><span class="p">:</span><span class="mi">33</span> <span class="n">errors</span><span class="p">:</span><span class="mi">0</span> <span class="n">dropped</span><span class="p">:</span><span class="mi">0</span> <span class="n">overruns</span><span class="p">:</span><span class="mi">0</span> <span class="n">carrier</span><span class="p">:</span><span class="mi">0</span>
+          <span class="n">collisions</span><span class="p">:</span><span class="mi">0</span> <span class="n">txqueuelen</span><span class="p">:</span><span class="mi">1000</span>
+          <span class="n">RX</span> <span class="nb">bytes</span><span class="p">:</span><span class="mi">2667</span> <span class="p">(</span><span class="mf">2.6</span> <span class="n">KB</span><span class="p">)</span>  <span class="n">TX</span> <span class="nb">bytes</span><span class="p">:</span><span class="mi">2797</span> <span class="p">(</span><span class="mf">2.7</span> <span class="n">KB</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To make the IP address associated with this interface persistent, add
+the following line to /etc/network/interfaces and reboot your machine:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iface</span> <span class="n">root</span><span class="o">-</span><span class="n">eth0</span> <span class="n">inet</span> <span class="n">manual</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="check-connection">
+<h2>Check connection<a class="headerlink" href="#check-connection" title="Permalink to this headline">¶</a></h2>
+<p>After rebooting, run Mini-NDN and issue the following command:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span><span class="n">net</span>
+<span class="n">a</span> <span class="n">a</span><span class="o">-</span><span class="n">eth0</span><span class="p">:</span><span class="n">b</span><span class="o">-</span><span class="n">eth0</span> <span class="n">a</span><span class="o">-</span><span class="n">eth1</span><span class="p">:</span><span class="n">c</span><span class="o">-</span><span class="n">eth0</span> <span class="n">a</span><span class="o">-</span><span class="n">eth2</span><span class="p">:</span><span class="n">root</span><span class="o">-</span><span class="n">eth0</span>
+</pre></div>
+</div>
+<p>Node “a” is connected to “root-eth0”. Now issue “ifconfig a-eth2” on
+node “a”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span><span class="n">a</span> <span class="n">ifconfig</span> <span class="n">a</span><span class="o">-</span><span class="n">eth2</span>
+<span class="n">a</span><span class="o">-</span><span class="n">eth2</span>    <span class="n">Link</span> <span class="n">encap</span><span class="p">:</span><span class="n">Ethernet</span>  <span class="n">HWaddr</span> <span class="n">fa</span><span class="p">:</span><span class="mi">76</span><span class="p">:</span><span class="n">d4</span><span class="p">:</span><span class="mi">86</span><span class="p">:</span><span class="n">d3</span><span class="p">:</span><span class="n">ba</span>
+          <span class="n">inet</span> <span class="n">addr</span><span class="p">:</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.10</span>  <span class="n">Bcast</span><span class="p">:</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.11</span>  <span class="n">Mask</span><span class="p">:</span><span class="mf">255.255</span><span class="o">.</span><span class="mf">255.252</span>
+</pre></div>
+</div>
+<p>As learned from the previous step, the IP address of root-eth0 is
+1.0.0.9.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span><span class="n">a</span> <span class="n">ping</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span>
+<span class="n">PING</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span><span class="p">)</span> <span class="mi">56</span><span class="p">(</span><span class="mi">84</span><span class="p">)</span> <span class="nb">bytes</span> <span class="n">of</span> <span class="n">data</span><span class="o">.</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">1</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.137</span> <span class="n">ms</span>
+<span class="mi">64</span> <span class="nb">bytes</span> <span class="kn">from</span> <span class="mf">1.0</span><span class="o">.</span><span class="mf">0.9</span><span class="p">:</span> <span class="n">icmp_seq</span><span class="o">=</span><span class="mi">2</span> <span class="n">ttl</span><span class="o">=</span><span class="mi">64</span> <span class="n">time</span><span class="o">=</span><span class="mf">0.123</span> <span class="n">ms</span>
+</pre></div>
+</div>
+<p>The host machine will also be able to ping node “a”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>VirtualBox:~$ ping 1.0.0.10
+PING 1.0.0.10 (1.0.0.10) 56(84) bytes of data.
+64 bytes from 1.0.0.10: icmp_seq=1 ttl=64 time=0.086 ms
+</pre></div>
+</div>
+</div>
+<div class="section" id="run-nfd-on-local-machine-and-register-route">
+<h2>Run NFD on local machine and register route<a class="headerlink" href="#run-nfd-on-local-machine-and-register-route" title="Permalink to this headline">¶</a></h2>
+<p>Start NFD on the local machine by using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">nfd</span>
+</pre></div>
+</div>
+<p>The “nfd-start” script cannot be used, since the script allows only one
+instance of NFD at a time. The NFD processes running on the Mini-NDN
+nodes will prevent the “nfd-start” script from working.</p>
+<p>Now, using “nfdc register”, we can register a route from node “a” in
+Mini-NDN to the NFD process on the host machine and from the host
+machine to an external machine.</p>
+<p>Also, if the local machine has a public IP, Mini-NDN nodes can be
+reached via external machines.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CLUSTER.html" class="btn btn-neutral float-right" title="Mini-NDN cluster edition" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="EXPERIMENTS.html" class="btn btn-neutral" title="Experiments" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

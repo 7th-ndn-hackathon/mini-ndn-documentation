@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Configuration" href="CONFIG.html" />
+    <link rel="prev" title="Installation Instructions" href="INSTALL.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-mini-ndn">Running Mini-NDN</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-options">Command-line options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#routing-options">Routing options</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#working-directory-structure">Working Directory Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EXPERIMENTS.html">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONNECT-TO-OUTSIDE.html">Connect Mini-NDN nodes to an outside network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CLUSTER.html">Mini-NDN cluster edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GUI.html">Mini-NDN Edit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Getting Started</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/GETTING-STARTED.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="running-mini-ndn">
+<h2>Running Mini-NDN<a class="headerlink" href="#running-mini-ndn" title="Permalink to this headline">¶</a></h2>
+<p>To run Mini-NDN with the default topology,
+<code class="docutils literal notranslate"><span class="pre">ndn_utils/topologies/default-topology.conf</span></code>, type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span>
+</pre></div>
+</div>
+<p>A full list of options can be printed by using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">help</span>
+</pre></div>
+</div>
+<p>To run Mini-NDN with a topology file, provide the filename as the first
+argument:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="n">my</span><span class="o">-</span><span class="n">topology</span><span class="o">.</span><span class="n">conf</span>
+</pre></div>
+</div>
+<p>During set up, the list of nodes in the network will be listed as they
+are initialized:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">Adding</span> <span class="n">hosts</span><span class="p">:</span>
+<span class="n">a</span> <span class="n">b</span> <span class="n">c</span> <span class="n">d</span>
+</pre></div>
+</div>
+<p>After set up, the command-line interface (CLI) will display a prompt.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>To interact with a node, first type the node’s name and then the command
+to be executed:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>mini-ndn&gt; a echo &quot;Hello, world!&quot;
+Hello, world!
+</pre></div>
+</div>
+<p>To see the status of the forwarder on the node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span> <span class="n">a</span> <span class="n">nfdc</span> <span class="n">status</span> <span class="n">report</span>
+</pre></div>
+</div>
+<p>To see the status of routing on the node:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span> <span class="n">a</span> <span class="n">nlsrc</span> <span class="n">status</span>
+</pre></div>
+</div>
+<p>To exit Mini-NDN, type <code class="docutils literal notranslate"><span class="pre">quit</span></code> in the CLI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mini</span><span class="o">-</span><span class="n">ndn</span><span class="o">&gt;</span> <span class="n">quit</span>
+</pre></div>
+</div>
+<p>Another option to quit Mini-NDN is sending a SIGQUIT (ctrl+). SIGINT
+(ctrl+c) is reserved for the purpose of stopping applications initiated
+on the minindn command line.</p>
+<p>For a more in depth explanation of the CLI, please see the <a class="reference external" href="http://mininet.org/walkthrough/">Mininet
+Walkthrough</a>.</p>
+</div>
+<div class="section" id="command-line-options">
+<h2>Command-line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<p>To run Mini-NDN with a replica of the NDN testbed, use the <code class="docutils literal notranslate"><span class="pre">--testbed</span></code>
+parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">testbed</span>
+</pre></div>
+</div>
+<p>To change the working directory from default <code class="docutils literal notranslate"><span class="pre">/tmp/minindn</span></code> following
+option can be used:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">work</span><span class="o">-</span><span class="nb">dir</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">mydir</span><span class="o">/</span><span class="n">test</span>
+</pre></div>
+</div>
+<p>Autocomplete of command-line options is available for users of Bash and
+Zsh.</p>
+<div class="section" id="routing-options">
+<h3>Routing options<a class="headerlink" href="#routing-options" title="Permalink to this headline">¶</a></h3>
+<p>To run minindn without NLSR, use the <code class="docutils literal notranslate"><span class="pre">--no-nlsr</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">nlsr</span>
+</pre></div>
+</div>
+<p>To run NLSR with hyperbolic routing enabled, use the <code class="docutils literal notranslate"><span class="pre">--routing</span></code>
+parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">routing</span> <span class="n">hr</span>
+</pre></div>
+</div>
+<p>Topology files given under ndn_utils/topologies/minindn* have
+hyperbolic coordinates configured and can be used with this option.</p>
+<p>To run NLSR in dry-run mode, use the <code class="docutils literal notranslate"><span class="pre">--routing</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">routing</span> <span class="n">dry</span>
+</pre></div>
+</div>
+<p>To configure the max number of faces added by NLSR to reach each name
+prefix, use the <code class="docutils literal notranslate"><span class="pre">--faces</span></code> parameter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">faces</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">--faces</span></code> can be an integer from 0 to 60; 0 indicates NLSR can add all
+available faces.</p>
+<p>To run Mini-NDN with NLSR security configured</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">minindn</span> <span class="o">--</span><span class="n">nlsr</span><span class="o">-</span><span class="n">security</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="working-directory-structure">
+<h2>Working Directory Structure<a class="headerlink" href="#working-directory-structure" title="Permalink to this headline">¶</a></h2>
+<p>Currently Mini-NDN uses /tmp/minindn as the working directory if not
+specified otherwise by using the option –work-dir.</p>
+<p>Each node is given a HOME directory under /tmp/minindn/node-name where
+node-name is the name of the node specified in the [nodes] section of
+the conf file.</p>
+<p>NFD conf file is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/node-name.conf</span></code></p>
+<p>NFD log file is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/node-name.log</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">.ndn</span></code> folder is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/.ndn</span></code></p>
+<p>NLSR conf file is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/nlsr.conf</span></code></p>
+<p>NLSR log file is stored at <code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/log/nlsr.log</span></code></p>
+<p>When security is enabled, NLSR security certificates are stored in:
+<code class="docutils literal notranslate"><span class="pre">/tmp/minindn/node-name/security</span></code> Note that no NLSR publishes the root
+certificate, Mini-NDN installs root.cert in security folder for each
+NLSR.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="CONFIG.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="INSTALL.html" class="btn btn-neutral" title="Installation Instructions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

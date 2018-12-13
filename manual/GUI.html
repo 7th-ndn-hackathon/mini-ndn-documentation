@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Mini-NDN Edit &mdash; Mini-NDN 0.4.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQ" href="FAQ.html" />
+    <link rel="prev" title="Mini-NDN cluster edition" href="CLUSTER.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Mini-NDN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="manual.html">Mini-NDN Manual</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="INSTALL.html">Installation Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GETTING-STARTED.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONFIG.html">Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="EXPERIMENTS.html">Experiments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONNECT-TO-OUTSIDE.html">Connect Mini-NDN nodes to an outside network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CLUSTER.html">Mini-NDN cluster edition</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mini-NDN Edit</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#working-with-topology-files">Working with topology files</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#file-formats">File formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-menu">File menu</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#editing-host-information">Editing host information</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#editing-link-configuration">Editing link configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RELEASE-NOTES.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hackathons.html">Past NDN hackathon projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../video-tutorials.html">Video Tutorials</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Mini-NDN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="manual.html">Mini-NDN Manual</a> &raquo;</li>
+        
+      <li>Mini-NDN Edit</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/manual/GUI.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mini-ndn-edit">
+<h1>Mini-NDN Edit<a class="headerlink" href="#mini-ndn-edit" title="Permalink to this headline">¶</a></h1>
+<p>Mini-NDN Edit is a GUI program designed to simplify the creation of
+Mini-NDN topology configuration files. Mini-NDN Edit allows the user to
+build a topology, configure the hosts and links, and generate a topology
+file that can be used by Mini-NDN.</p>
+<div class="figure" id="id1">
+<img alt="minindnedit" src="../_images/minindnedit.png" />
+<p class="caption"><span class="caption-text">minindnedit</span></p>
+</div>
+<div class="section" id="working-with-topology-files">
+<h2>Working with topology files<a class="headerlink" href="#working-with-topology-files" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="file-formats">
+<h3>File formats<a class="headerlink" href="#file-formats" title="Permalink to this headline">¶</a></h3>
+<p>There are two file formats used by Mini-NDN edit.</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">.mnndn</span></code> files store topology information used by the GUI. Mini-NDN
+Edit can open and save <code class="docutils literal notranslate"><span class="pre">.mnndn</span></code> files.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.conf</span></code> files are used by Mini-NDN to create and run topologies.
+Mini-NDN Edit can generate a <code class="docutils literal notranslate"><span class="pre">.conf</span></code> file from a <code class="docutils literal notranslate"><span class="pre">.mnndn</span></code> file.
+Mini-NDN edit cannot open <code class="docutils literal notranslate"><span class="pre">.conf</span></code> files. Please see
+<a class="reference external" href="CONFIG.md">CONFIG-FILE.md</a> for more information on the content
+and format of <code class="docutils literal notranslate"><span class="pre">.conf</span></code> files.</li>
+</ul>
+</div>
+<div class="section" id="file-menu">
+<h3>File menu<a class="headerlink" href="#file-menu" title="Permalink to this headline">¶</a></h3>
+<div class="figure" id="id2">
+<img alt="file-dropdown" src="../_images/file-dropdown.png" />
+<p class="caption"><span class="caption-text">file-dropdown</span></p>
+</div>
+<ul class="simple">
+<li><strong>New</strong> - Erase the current canvas and provide a new empty topology</li>
+<li><strong>Open</strong> - Open a <code class="docutils literal notranslate"><span class="pre">.mnndn</span></code> topology file</li>
+<li><strong>Save</strong> - Save the current topology as a <code class="docutils literal notranslate"><span class="pre">.mnndn</span></code> topology file</li>
+<li><strong>Generate</strong> - Convert the current topology to a <code class="docutils literal notranslate"><span class="pre">.conf</span></code> file
+runnable by Mini-NDN</li>
+<li><strong>Run</strong> - Run the current topology in Mini-NDN. The GUI will
+disappear and Mini-NDN will run on the command-line.</li>
+<li><strong>Quit</strong> - Exit Mini-NDN edit</li>
+</ul>
+</div>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id3">
+<img alt="cursor-tool" src="../_images/cursor-tool.png" />
+<p class="caption"><span class="caption-text">cursor-tool</span></p>
+</div>
+<p>The <em>cursor tool</em> is used to select and move nodes in the topology. A
+selected node or link can be removed from the topology using the
+<code class="docutils literal notranslate"><span class="pre">backspace</span></code> key or by selecting <code class="docutils literal notranslate"><span class="pre">edit/cut</span></code>.</p>
+<div class="figure" id="id4">
+<img alt="host-tool" src="../_images/host-tool.png" />
+<p class="caption"><span class="caption-text">host-tool</span></p>
+</div>
+<p>The <em>host tool</em> is used to add a host node to the topology. Click on the
+canvas to create a new host node at the mouse cursor’s position.</p>
+<div class="figure" id="id5">
+<img alt="switch-tool" src="../_images/switch-tool.png" />
+<p class="caption"><span class="caption-text">switch-tool</span></p>
+</div>
+<p>The <em>switch tool</em> is used to add a switch to the topology. Click on the
+canvas to create a new switch at the mouse cursor’s position.</p>
+<div class="figure" id="id6">
+<img alt="link-tool" src="../_images/link-tool.png" />
+<p class="caption"><span class="caption-text">link-tool</span></p>
+</div>
+<p>The <em>link tool</em> is used to connect two nodes with a network link. Click
+on a node and drag the mouse cursor to another node to create a link
+between the two nodes.</p>
+</div>
+<div class="section" id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="editing-host-information">
+<h3>Editing host information<a class="headerlink" href="#editing-host-information" title="Permalink to this headline">¶</a></h3>
+<p>To edit a host’s information and configuration, right-click on the
+desired node and select <code class="docutils literal notranslate"><span class="pre">Host</span> <span class="pre">Options</span></code>.</p>
+<p>The <em>Host Options</em> window will include tabs to modify the node’s
+properties as well as the configuration files for NFD and NLSR on that
+node.</p>
+<p><em>Note: Network, Site, and Router in the NLSR tab are unused in v0.1.0</em></p>
+<div class="figure" id="id7">
+<img alt="host-config" src="../_images/host-config.png" />
+<p class="caption"><span class="caption-text">host-config</span></p>
+</div>
+</div>
+<div class="section" id="editing-link-configuration">
+<h3>Editing link configuration<a class="headerlink" href="#editing-link-configuration" title="Permalink to this headline">¶</a></h3>
+<p>To edit a link’s configuration, right-click on the desired link and
+select <code class="docutils literal notranslate"><span class="pre">Link</span> <span class="pre">Options</span></code>.</p>
+<p>The <em>Link Options</em> window will allow configuration of the link’s
+bandwidth, delay, and loss rate.</p>
+<div class="figure" id="id8">
+<img alt="link-details" src="../_images/link-details.png" />
+<p class="caption"><span class="caption-text">link-details</span></p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="FAQ.html" class="btn btn-neutral float-right" title="FAQ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="CLUSTER.html" class="btn btn-neutral" title="Mini-NDN cluster edition" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, Mini-NDN
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
