@@ -41,5 +41,5 @@ code changes, as it can more accurately test the interaction of software compone
 +--------------------------------+-----------------------------------------------------------+-----------------------------------------+
 | Post processing scripts        | Not available, users need to write their own              | Available to use to process the logs    |
 +--------------------------------+-----------------------------------------------------------+-----------------------------------------+
-| Other                          | Not yet supported (Wifi in development)                   | WiFi, LTE, etc interfaces available from ns-3 |
+| Other                          | Not yet supported (Wifi in development)                   | WiFi, LTE, etc available from ns-3    |
 +--------------------------------+-----------------------------------------------------------+-----------------------------------------+
